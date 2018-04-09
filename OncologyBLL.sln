@@ -1,0 +1,28 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 14
+VisualStudioVersion = 14.0.25420.1
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OncologyReceipts", "OncologyReceipts\OncologyReceipts.csproj", "{97657209-6237-4699-9673-683D0359F9CA}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Oncology.Model", "Oncology.Model\Oncology.Model.csproj", "{14B2BD0A-E1E2-4286-92A8-E97BE9EA8939}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{97657209-6237-4699-9673-683D0359F9CA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{97657209-6237-4699-9673-683D0359F9CA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{97657209-6237-4699-9673-683D0359F9CA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{97657209-6237-4699-9673-683D0359F9CA}.Release|Any CPU.Build.0 = Release|Any CPU
+		{14B2BD0A-E1E2-4286-92A8-E97BE9EA8939}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{14B2BD0A-E1E2-4286-92A8-E97BE9EA8939}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{14B2BD0A-E1E2-4286-92A8-E97BE9EA8939}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{14B2BD0A-E1E2-4286-92A8-E97BE9EA8939}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
