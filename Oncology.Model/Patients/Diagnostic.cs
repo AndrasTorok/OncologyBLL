@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace Oncology.Model
 {
-    public class Diagnostic
+    public class Diagnostic : IIdentity
     {
         [Key]
         public int Id { get; set; }

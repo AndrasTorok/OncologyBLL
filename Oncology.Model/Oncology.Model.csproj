@@ -50,6 +50,11 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Context\SeedingHelper.cs" />
+    <Compile Include="Helpers\CollectionChangeDetector.cs" />
+    <Compile Include="IIdentity.cs" />
+    <Compile Include="Patients\CycleItem.cs" />
+    <Compile Include="Patients\Cycle.cs" />
+    <Compile Include="Treatments\DoseApplicationMode.cs" />
     <Compile Include="Treatments\TreatmentItem.cs" />
     <Compile Include="Treatments\Medicament.cs" />
     <Compile Include="Patients\Diagnostic.cs" />
@@ -60,11 +65,13 @@
     <Compile Include="Patients\Patient.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Treatments\Treatment.cs" />
-    <Compile Include="TreatmentCycle.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
     <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Interface\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

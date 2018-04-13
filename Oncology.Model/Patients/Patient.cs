@@ -7,7 +7,7 @@ using System.Web;
 
 namespace Oncology.Model
 {    
-    public class Patient
+    public class Patient : IIdentity
     {
         [Key]        
         public int Id { get; set; }

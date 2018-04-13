@@ -50,22 +50,42 @@ namespace Oncology.Model
             Medicament paclitaxel80Medicament = new Medicament
             {
                 Name = "Paclitaxel 80",
-                Dose = 80.0                     // => mg per sqm body surface
+                DoseApplicationMode = DoseApplicationMode.Sqm,
+                Dose = 80.0                     
             };
-            context.Medicaments.AddRange(new List<Medicament> { paclitaxel80Medicament });
+            Medicament ciclofosfamida = new Medicament
+            {
+                Name = "Ciclofosfamida",
+                DoseApplicationMode = DoseApplicationMode.Kg,
+                Dose = 40.0                     
+            };
+            context.Medicaments.AddRange(new List<Medicament> { paclitaxel80Medicament, ciclofosfamida });            
 
             Treatment paclitaxel80p4week = new Treatment
             {
                 Name = "Paclitaxel 80 4 saptamani",
-                TreatmentItems = new List<TreatmentItem>
-                {
+                TreatmentItems = new List<TreatmentItem> {
                     new TreatmentItem { Medicament = paclitaxel80Medicament, OnDay = 0 },
+                    new TreatmentItem { Medicament = ciclofosfamida, OnDay = 0 },
                     new TreatmentItem { Medicament = paclitaxel80Medicament, OnDay = 7 },
+                    new TreatmentItem { Medicament = ciclofosfamida, OnDay = 7 },
                     new TreatmentItem { Medicament = paclitaxel80Medicament, OnDay = 14 },
-                    new TreatmentItem { Medicament = paclitaxel80Medicament, OnDay = 21 }
+                    new TreatmentItem { Medicament = ciclofosfamida, OnDay = 14 },
+                    new TreatmentItem { Medicament = paclitaxel80Medicament, OnDay = 21 },
+                    new TreatmentItem { Medicament = ciclofosfamida, OnDay = 21 },
+                    new TreatmentItem { Medicament = paclitaxel80Medicament, OnDay = 28 },
+                    new TreatmentItem { Medicament = ciclofosfamida, OnDay = 28 }
                 }
             };
             context.Treatments.AddRange(new List<Treatment> { paclitaxel80p4week });
+
+            Cycle amaliaGrecuMamarDiagnosticFirstCycle = new Cycle
+            {
+                Diagnostic = amaliaGrecuMamarDiagnostic,
+                StartDate = new DateTime(2015, 12, 1),
+                Treatment = paclitaxel80p4week                
+            };
+            context.Cycles.AddRange(new List<Cycle> { amaliaGrecuMamarDiagnosticFirstCycle });           
         }
     }
 }

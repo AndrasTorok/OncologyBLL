@@ -36,29 +36,50 @@ namespace OncologyReceipts.Api
 
         public virtual async Task<T> Put(T entity)
         {
-            context.Set<T>().Attach(entity);
-            context.Entry(entity).State = EntityState.Modified;
-            await context.SaveChangesAsync();
+            try
+            {
+                context.Set<T>().Attach(entity);
+                context.Entry(entity).State = EntityState.Modified;
+                await context.SaveChangesAsync();
 
-            return entity;
+                return entity;
+            }
+            catch(Exception ex)
+            {
+                return null;
+            }
         }
 
         public virtual async Task<T> Post(T entity)
         {
-            context.Set<T>().Add(entity);
-            await context.SaveChangesAsync();
+            try
+            {
+                context.Set<T>().Add(entity);
+                await context.SaveChangesAsync();
 
-            return entity;
+                return entity;
+            }
+            catch (Exception ex)
+            {
+                return null;
+            }
         }
 
         public virtual async Task<bool> Delete(int id)
         {
-            T entity = await context.Set<T>().FindAsync(id);
-            context.Set<T>().Remove(entity);
+            try
+            {
+                T entity = await context.Set<T>().FindAsync(id);
+                context.Set<T>().Remove(entity);
 
-            int deletedRecords = await context.SaveChangesAsync();
+                int deletedRecords = await context.SaveChangesAsync();
 
-            return deletedRecords > 0;
+                return deletedRecords > 0;
+            }
+            catch (Exception ex)
+            {
+                return false;
+            }
         }
     }
 }

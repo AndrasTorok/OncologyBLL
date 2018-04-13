@@ -18,7 +18,7 @@ namespace OncologyReceipts
             config.Filters.Add(new HostAuthenticationFilter(OAuthDefaults.AuthenticationType));
 
             // Web API routes
-            config.MapHttpAttributeRoutes();
+            config.MapHttpAttributeRoutes();            
 
             config.Routes.MapHttpRoute(
                 name: "DefaultApi",

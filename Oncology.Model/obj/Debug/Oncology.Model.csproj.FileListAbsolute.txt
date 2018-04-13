@@ -1,10 +1,9 @@
+D:\Learning\OncologyBLL\Oncology.Model\bin\Debug\Oncology.Model.dll.config
 D:\Learning\OncologyBLL\Oncology.Model\bin\Debug\Oncology.Model.dll
 D:\Learning\OncologyBLL\Oncology.Model\bin\Debug\Oncology.Model.pdb
-D:\Learning\OncologyBLL\Oncology.Model\obj\Debug\Oncology.Model.dll
-D:\Learning\OncologyBLL\Oncology.Model\obj\Debug\Oncology.Model.pdb
-D:\Learning\OncologyBLL\Oncology.Model\bin\Debug\Oncology.Model.dll.config
 D:\Learning\OncologyBLL\Oncology.Model\bin\Debug\EntityFramework.dll
 D:\Learning\OncologyBLL\Oncology.Model\bin\Debug\EntityFramework.SqlServer.dll
 D:\Learning\OncologyBLL\Oncology.Model\bin\Debug\EntityFramework.xml
 D:\Learning\OncologyBLL\Oncology.Model\bin\Debug\EntityFramework.SqlServer.xml
-D:\Learning\OncologyBLL\Oncology.Model\obj\Debug\Oncology.Model.csprojResolveAssemblyReference.cache
+D:\Learning\OncologyBLL\Oncology.Model\obj\Debug\Oncology.Model.dll
+D:\Learning\OncologyBLL\Oncology.Model\obj\Debug\Oncology.Model.pdb

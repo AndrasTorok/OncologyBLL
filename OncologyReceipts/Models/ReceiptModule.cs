@@ -11,7 +11,7 @@ namespace OncologyReceipts.Models
     {
         protected override void Load(ContainerBuilder builder)
         {
-            builder.RegisterType<OncologyReceiptsContext>().InstancePerRequest();
+            builder.RegisterType<OncologyReceiptsContext>();
         }
     }
 }

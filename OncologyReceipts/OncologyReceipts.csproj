@@ -220,8 +220,10 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Api\ApiBaseController.cs" />
+    <Compile Include="Api\CycleItemController.cs" />
     <Compile Include="Api\MedicamentController.cs" />
     <Compile Include="Api\PatientController.cs" />
+    <Compile Include="Api\CycleController.cs" />
     <Compile Include="Api\TreatmentItemController.cs" />
     <Compile Include="Api\TreatmentController.cs" />
     <Compile Include="Api\DiagnosticController.cs" />
