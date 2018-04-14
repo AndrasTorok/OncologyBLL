@@ -83,7 +83,8 @@ namespace Oncology.Model
             {
                 Diagnostic = amaliaGrecuMamarDiagnostic,
                 StartDate = new DateTime(2015, 12, 1),
-                Treatment = paclitaxel80p4week                
+                Treatment = paclitaxel80p4week,
+                CycleItems = new List<CycleItem>()
             };
             context.Cycles.AddRange(new List<Cycle> { amaliaGrecuMamarDiagnosticFirstCycle });           
         }

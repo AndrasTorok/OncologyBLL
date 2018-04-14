@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace Oncology.Model
 {
-    public class Medicament : IIdentity
+    public class Medicament : IIdentity<Medicament>
     {
         [Key]
         public int Id { get; set; }
@@ -18,5 +18,10 @@ namespace Oncology.Model
         public DoseApplicationMode DoseApplicationMode { get; set; }
 
         public double Dose { get; set; }
+
+        public void UpdatePropertiesFrom(Medicament that)
+        {
+            throw new NotImplementedException();
+        }
     }
 }

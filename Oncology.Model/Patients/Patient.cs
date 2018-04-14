@@ -7,7 +7,7 @@ using System.Web;
 
 namespace Oncology.Model
 {    
-    public class Patient : IIdentity
+    public class Patient : IIdentity<Patient>
     {
         [Key]        
         public int Id { get; set; }
@@ -30,5 +30,10 @@ namespace Oncology.Model
         public int Weight { get; set; }
 
         public IList<Diagnostic> Diagnostics { get; set; }
+
+        public void UpdatePropertiesFrom(Patient that)
+        {
+            throw new NotImplementedException();
+        }
     }
 }

@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace Oncology.Model
 {
-    public class Treatment : IIdentity
+    public class Treatment : IIdentity<Treatment>
     {
         [Key]
         public int Id { get; set; }
@@ -16,5 +16,10 @@ namespace Oncology.Model
         public string Name { get; set; }
 
         public IList<TreatmentItem> TreatmentItems { get; set; }
+
+        public void UpdatePropertiesFrom(Treatment that)
+        {
+            throw new NotImplementedException();
+        }
     }
 }

@@ -6,8 +6,9 @@ using System.Threading.Tasks;
 
 namespace Oncology.Model
 {
-    public interface IIdentity
+    public interface IIdentity<T>
     {
         int Id { get; set; }
+        void UpdatePropertiesFrom(T that);
     }
 }

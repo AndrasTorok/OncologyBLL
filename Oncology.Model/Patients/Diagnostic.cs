@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace Oncology.Model
 {
-    public class Diagnostic : IIdentity
+    public class Diagnostic : IIdentity<Diagnostic>
     {
         [Key]
         public int Id { get; set; }
@@ -24,6 +24,11 @@ namespace Oncology.Model
         [StringLength(200)]
         public string Localization { get; set; }
 
-        public DateTime Date { get; set; }        
+        public DateTime Date { get; set; }
+
+        public void UpdatePropertiesFrom(Diagnostic that)
+        {
+            throw new NotImplementedException();
+        }
     }
 }

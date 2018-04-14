@@ -11,7 +11,7 @@ using System.Data.Entity;
 namespace OncologyReceipts.Api
 {
     public abstract class ApiBaseController<T> : ApiController
-        where T : class
+        where T : class, IIdentity<T>
     {
         protected OncologyReceiptsContext context;
 
@@ -44,9 +44,9 @@ namespace OncologyReceipts.Api
 
                 return entity;
             }
-            catch(Exception ex)
+            catch (Exception ex)
             {
-                return null;
+                throw ex;
             }
         }
 
@@ -61,7 +61,7 @@ namespace OncologyReceipts.Api
             }
             catch (Exception ex)
             {
-                return null;
+                throw ex;
             }
         }
 
@@ -78,8 +78,76 @@ namespace OncologyReceipts.Api
             }
             catch (Exception ex)
             {
-                return false;
+                throw ex;
             }
         }
-    }
+
+        public async Task<T> SaveGraph<TItems>(T live, string itemsPropertyName)
+            where TItems : class, IIdentity<TItems>
+        {
+            var itemsPropertyInfo = typeof(T).GetProperty(itemsPropertyName);
+
+            if (itemsPropertyInfo == null)
+            {
+                bool isInvalid = !itemsPropertyInfo.PropertyType.GetInterfaces().Any(t => t.IsGenericType && t.GetGenericTypeDefinition() == typeof(IEnumerable<TItems>));
+
+                var tPropertyName = typeof(T).Name;
+                string message = $"SaveGraph({tPropertyName} live, {itemsPropertyName}): there is no {itemsPropertyName} collection property on {tPropertyName} type.";
+
+                throw new ApplicationException(message);
+            }
+
+            try
+            {
+                if (live != null)
+                {
+                    if (live.Id != 0)                                                                   //updating entity                     
+                    {
+                        T store = await context.Set<T>().Include(itemsPropertyName).FirstOrDefaultAsync(c => c.Id == live.Id);      //find the store entity
+
+                        if (!store.Equals(live))                                //if store and live entity is not the same then update the store entity to the live entity
+                        {
+                            store.UpdatePropertiesFrom(live);                                           //using the custom UpdatePropertiesFrom method
+                        }
+
+                        IList<TItems> liveItems = itemsPropertyInfo.GetValue(live) as IList<TItems>,   //obtian the collection items using reflection
+                            storeItems = itemsPropertyInfo.GetValue(store) as IList<TItems>;           //for live and store
+
+                        var itemsChanges = CollectionChangeDetector<TItems>.CollectionChanges(liveItems, storeItems);               //get the collection changes for the items
+
+                        itemsChanges.Added.ForEach(liveItem =>                                          //items to be added
+                        {
+                            storeItems.Add(liveItem);                                                   //add them to the store items
+                        });
+
+                        itemsChanges.Deleted.ForEach(liveItem =>                                        //items to be deleted
+                        {
+                            TItems storeItem = storeItems.First(sci => sci.Id == liveItem.Id);          //find the corresponding store item
+
+                            context.Set<TItems>().Remove(storeItem);                                    //remove them from the context ( removing from the store item would not work )
+                        });
+
+                        itemsChanges.Updated.ForEach(liveItem =>                                        //items to be updated
+                        {
+                            TItems storeItem = storeItems.First(sci => sci.Id == liveItem.Id);          //find the corresponding store item
+
+                            storeItem.UpdatePropertiesFrom(liveItem);                                   //update the store 
+                        });
+                    }
+                    else
+                    {                                                                                   //adding the live entity
+                        context.Set<T>().Add(live);
+                    }
+
+                    await context.SaveChangesAsync();
+                }
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+
+            return live;
+        }
+    }    
 }

@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace Oncology.Model
 {
-    public class TreatmentItem : IIdentity
+    public class TreatmentItem : IIdentity<TreatmentItem>
     {
         [Key]
         public int Id { get; set; }
@@ -24,5 +24,10 @@ namespace Oncology.Model
         public virtual Medicament Medicament { get; set; }
 
         public int OnDay { get; set; }
+
+        public void UpdatePropertiesFrom(TreatmentItem that)
+        {
+            throw new NotImplementedException();
+        }
     }
 }

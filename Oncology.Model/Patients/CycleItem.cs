@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace Oncology.Model
 {
-    public class CycleItem : IIdentity
+    public class CycleItem : IIdentity<CycleItem>
     {
         [Key]
         public int Id { get; set; }
@@ -32,19 +32,7 @@ namespace Oncology.Model
 
         public double QuantityCalculated { get; set; }
 
-        public double QuantityApplied { get; set; }
-
-        public void UpdateFromPropertiesFrom(CycleItem that)
-        {
-            this.CycleId = that.CycleId;
-            this.TreatmentItemId = that.TreatmentItemId;
-            //this.TreatmentItem = that.TreatmentItem;
-            this.MedicamentId = that.MedicamentId;
-            //this.Medicament = that.Medicament;
-            this.OnDay = that.OnDay;
-            this.QuantityApplied = that.QuantityApplied;
-            this.QuantityCalculated = that.QuantityCalculated;
-        }
+        public double QuantityApplied { get; set; }        
 
         public override bool Equals(object obj)
         {
@@ -56,12 +44,22 @@ namespace Oncology.Model
 
         public override string ToString()
         {
-            return $"{Id} - {CycleId} - {TreatmentItemId} - {MedicamentId} - {OnDay} {QuantityCalculated} , {QuantityApplied}";
+            return $"{Id} - {CycleId} - {TreatmentItemId} - {MedicamentId} - {OnDay} , {QuantityCalculated} , {QuantityApplied}";
         }
 
         public override int GetHashCode()
         {
             return ToString().GetHashCode();
+        }
+
+        public void UpdatePropertiesFrom(CycleItem that)
+        {
+            this.CycleId = that.CycleId;
+            this.TreatmentItemId = that.TreatmentItemId;
+            this.MedicamentId = that.MedicamentId;
+            this.OnDay = that.OnDay;
+            this.QuantityApplied = that.QuantityApplied;
+            this.QuantityCalculated = that.QuantityCalculated;
         }
     }
 }

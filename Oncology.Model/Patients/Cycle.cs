@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace Oncology.Model
 {
-    public class Cycle : IIdentity
+    public class Cycle : IIdentity<Cycle>
     {
         [Key]
         public int Id { get; set; }
@@ -36,7 +36,7 @@ namespace Oncology.Model
 
         public override string ToString()
         {
-            return $"{Id} - {DiagnosticId} - {TreatmentId} {StartDate}";
+            return $"{Id} - {DiagnosticId} - {TreatmentId} , {StartDate}";
         }
 
         public override int GetHashCode()
@@ -44,13 +44,11 @@ namespace Oncology.Model
             return ToString().GetHashCode();
         }
 
-        public void UpdateFromPropertiesFrom(Cycle that)
+        public void UpdatePropertiesFrom(Cycle that)
         {
             this.DiagnosticId = that.DiagnosticId;
-            //this.Diagnostic = that.Diagnostic;
             this.StartDate = that.StartDate;
             this.TreatmentId = that.TreatmentId;
-            //this.Treatment = that.Treatment;            
         }
     }
 }

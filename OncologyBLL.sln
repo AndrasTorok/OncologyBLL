@@ -7,6 +7,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OncologyReceipts", "Oncolog
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Oncology.Model", "Oncology.Model\Oncology.Model.csproj", "{14B2BD0A-E1E2-4286-92A8-E97BE9EA8939}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OncologyReceipts.Tests", "OncologyReceipts.Tests\OncologyReceipts.Tests.csproj", "{AA9B9077-79FE-405A-AE66-27C6526AF84D}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -21,6 +23,10 @@ Global
 		{14B2BD0A-E1E2-4286-92A8-E97BE9EA8939}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{14B2BD0A-E1E2-4286-92A8-E97BE9EA8939}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{14B2BD0A-E1E2-4286-92A8-E97BE9EA8939}.Release|Any CPU.Build.0 = Release|Any CPU
+		{AA9B9077-79FE-405A-AE66-27C6526AF84D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{AA9B9077-79FE-405A-AE66-27C6526AF84D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{AA9B9077-79FE-405A-AE66-27C6526AF84D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{AA9B9077-79FE-405A-AE66-27C6526AF84D}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

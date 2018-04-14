@@ -51,7 +51,7 @@
   <ItemGroup>
     <Compile Include="Context\SeedingHelper.cs" />
     <Compile Include="Helpers\CollectionChangeDetector.cs" />
-    <Compile Include="IIdentity.cs" />
+    <Compile Include="Interface\IIdentity.cs" />
     <Compile Include="Patients\CycleItem.cs" />
     <Compile Include="Patients\Cycle.cs" />
     <Compile Include="Treatments\DoseApplicationMode.cs" />
@@ -70,9 +70,7 @@
     <None Include="App.config" />
     <None Include="packages.config" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Interface\" />
-  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
