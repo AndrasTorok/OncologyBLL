@@ -14,7 +14,7 @@ namespace OncologyReceipts.Api
         public TreatmentController(OncologyReceiptsContext context) : base(context)
         {
 
-        }         
+        }        
 
         public override async Task<Treatment> GetById(int id)
         {

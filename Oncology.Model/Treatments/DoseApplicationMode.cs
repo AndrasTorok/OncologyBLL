@@ -8,6 +8,6 @@ namespace Oncology.Model
 {
     public enum DoseApplicationMode
     {
-        Sqm, Kg
+        Sqm, Kg, Carboplatin
     }
 }

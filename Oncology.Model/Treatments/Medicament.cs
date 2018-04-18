@@ -19,6 +19,9 @@ namespace Oncology.Model
 
         public double Dose { get; set; }
 
+        [StringLength(300)]
+        public string Description { get; set; }
+
         public void UpdatePropertiesFrom(Medicament that)
         {
             throw new NotImplementedException();

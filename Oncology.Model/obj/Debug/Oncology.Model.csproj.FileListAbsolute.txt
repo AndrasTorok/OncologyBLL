@@ -7,3 +7,4 @@ D:\Learning\OncologyBLL\Oncology.Model\bin\Debug\EntityFramework.xml
 D:\Learning\OncologyBLL\Oncology.Model\bin\Debug\EntityFramework.SqlServer.xml
 D:\Learning\OncologyBLL\Oncology.Model\obj\Debug\Oncology.Model.dll
 D:\Learning\OncologyBLL\Oncology.Model\obj\Debug\Oncology.Model.pdb
+D:\Learning\OncologyBLL\Oncology.Model\obj\Debug\Oncology.Model.csprojResolveAssemblyReference.cache
