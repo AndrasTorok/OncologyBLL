@@ -29,13 +29,16 @@ namespace Oncology.Model
 
         public DbSet<CycleItem> CycleItems { get; set; }
 
-        protected override void OnModelCreating(DbModelBuilder modelBuilder)
+        protected override void OnModelCreating(DbModelBuilder mb)
         {
-            base.OnModelCreating(modelBuilder);
+            base.OnModelCreating(mb);
 
-            modelBuilder.Entity<Cycle>().HasRequired<Treatment>(cycle => cycle.Treatment).WithMany().WillCascadeOnDelete(false);
-            modelBuilder.Entity<TreatmentItem>().HasRequired<Medicament>(ti=>ti.Medicament).WithMany().WillCascadeOnDelete(false);
-            //modelBuilder.Entity<TreatmentItem>().HasRequired<Treatment>(ti => ti.Treatment).WithMany().WillCascadeOnDelete(false);
+            mb.Entity<Cycle>().HasRequired<Treatment>(cycle => cycle.Treatment).WithMany().WillCascadeOnDelete(false);      //when deleting Cycle don't delete Treatment
+
+            mb.Entity<CycleItem>().HasRequired<Medicament>(ti => ti.Medicament).WithMany().WillCascadeOnDelete(false);      //when deleting CycleItem don't delete Medicament
+            mb.Entity<CycleItem>().HasRequired<TreatmentItem>(ti => ti.TreatmentItem).WithMany().WillCascadeOnDelete(false);    //when deleting CycleItem don't delete TreatmentItem
+
+            mb.Entity<TreatmentItem>().HasRequired<Medicament>(ti=>ti.Medicament).WithMany().WillCascadeOnDelete(false);    //when deleting TreatmentItem don't delete Medicament
         }
     }
 }

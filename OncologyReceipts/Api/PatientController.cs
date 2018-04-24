@@ -23,5 +23,17 @@ namespace OncologyReceipts.Api
 
             return patient;
         }
+
+        public override async Task<HttpResponseMessage> Delete(int id)
+        {
+            if (await context.Patients.AnyAsync(patient => patient.Id == id && patient.Diagnostics.Any()))
+            {
+                string message = $"Patient-ul nu se poate sterge pentru care are deja diagnostic.";
+
+                return Request.CreateErrorResponse(HttpStatusCode.Forbidden, message);
+            }
+
+            return await base.Delete(id);
+        }
     }
 }

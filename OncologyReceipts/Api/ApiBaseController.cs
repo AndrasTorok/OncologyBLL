@@ -7,6 +7,8 @@ using System.Net.Http;
 using System.Threading.Tasks;
 using System.Web.Http;
 using System.Data.Entity;
+using System.Data.Entity.Core;
+using System.Data.Entity.Infrastructure;
 
 namespace OncologyReceipts.Api
 {
@@ -65,7 +67,7 @@ namespace OncologyReceipts.Api
             }
         }
 
-        public virtual async Task<bool> Delete(int id)
+        public virtual async Task<HttpResponseMessage> Delete(int id)
         {
             try
             {
@@ -74,11 +76,18 @@ namespace OncologyReceipts.Api
 
                 int deletedRecords = await context.SaveChangesAsync();
 
-                return deletedRecords > 0;
+                return Request.CreateResponse(HttpStatusCode.OK, deletedRecords > 0);
+            }
+            catch(DbUpdateException ex)
+            {
+                string name = typeof(T).Name;
+                string message = $"Entitatea {name} nu se poate sterge! Sunt deja create cu ea inregistrari in aplicatie.";   
+                    
+                return Request.CreateErrorResponse(HttpStatusCode.Forbidden, message);                
             }
             catch (Exception ex)
             {
-                throw ex;
+                return Request.CreateErrorResponse(HttpStatusCode.InternalServerError, ex.InnerException);
             }
         }
 

@@ -26,6 +26,8 @@ namespace Oncology.Model
 
         public DateTime Date { get; set; }
 
+        public IList<Cycle> Cycles { get; set; }
+
         public void UpdatePropertiesFrom(Diagnostic that)
         {
             throw new NotImplementedException();
