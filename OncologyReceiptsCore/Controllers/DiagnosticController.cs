@@ -12,8 +12,7 @@ namespace OncologyReceipts.Api
 
         }
 
-        [Route("getAllForPatientId/{patientId:int}")]
-        [HttpGet]
+        [Route("getAllForPatientId/{patientId:int}"), HttpGet]        
         public async Task<IList<Diagnostic>> GetAllForPatientId(int patientId)
         {
             List<Diagnostic> diagnostics = await context.Diagnostics.Where(d => d.PatientId == patientId).ToListAsync();
@@ -21,6 +20,7 @@ namespace OncologyReceipts.Api
             return diagnostics;
         }
 
+        [Route("{id}"), HttpDelete]
         public override async Task<IActionResult> Delete(int id)
         {
             if (await context.Diagnostics.AnyAsync(diagnostic => diagnostic.Id == id && diagnostic.Cycles.Any()))

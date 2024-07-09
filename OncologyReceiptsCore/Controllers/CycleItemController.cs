@@ -10,11 +10,12 @@ namespace OncologyReceipts.Api
         public CycleItemController(OncologyReceiptsContext context) : base(context)
         {
 
-        }         
+        }
 
+        [Route("{id}"), HttpGet]
         public override async Task<CycleItem> GetById(int id)
         {
-            CycleItem cycleItem = await context.CycleItems.Include(ci=> ci.TreatmentItem).Include(ci => ci.TreatmentItem.Medicament).FirstOrDefaultAsync(p => p.Id == id);
+            CycleItem cycleItem = await context.CycleItems.Include(ci=> ci.TreatmentItem).ThenInclude(ti => ti.Medicament).FirstOrDefaultAsync(p => p.Id == id);
 
             return cycleItem;
         }    

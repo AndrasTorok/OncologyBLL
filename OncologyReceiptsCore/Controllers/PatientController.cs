@@ -12,7 +12,7 @@ namespace OncologyReceipts.Api
 
         }
 
-        [Route("{id}")]
+        [Route("{id}"), HttpGet]
         public override async Task<Patient> GetById(int id)
         {
             Patient patient = await context.Patients.Include(p => p.Diagnostics).FirstOrDefaultAsync(p => p.Id == id);
@@ -20,7 +20,7 @@ namespace OncologyReceipts.Api
             return patient;
         }
 
-        [HttpDelete]
+        [Route("{id}"), HttpDelete]
         public override async Task<IActionResult> Delete(int id)
         {
             if (await context.Patients.AnyAsync(patient => patient.Id == id && patient.Diagnostics.Any()))
