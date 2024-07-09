@@ -1,0 +1,20 @@
+﻿################################################################################
+# This .gitignore file was automatically created by Microsoft(R) Visual Studio.
+################################################################################
+
+/.vs/OncologyBLL/FileContentIndex
+/.vs/OncologyBLL/v17
+/Oncology.Model/.vs
+/Oncology.Model/obj/Debug
+/OncologyReceipts/obj/Debug
+/OncologyReceipts/OncologyReceipts.csproj.user
+/OncologyReceipts/obj/Debug/DesignTimeResolveAssemblyReferencesInput.cache
+/OncologyReceipts/obj/Debug/OncologyReceipts.dll
+/OncologyReceipts/obj/Debug/OncologyReceipts.pdb
+/OncologyReceipts/OncologyReceipts.csproj.user
+/OncologyCore.Model/bin/Debug/net8.0
+/OncologyCore.Model/obj/Debug/net8.0
+/OncologyCore.Model/obj
+/OncologyReceiptsCore/bin
+/OncologyReceiptsCore/obj
+/OncologyReceiptsCore/OncologyReceiptsCore.csproj.user

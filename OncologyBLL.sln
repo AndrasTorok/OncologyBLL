@@ -1,13 +1,11 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 14
-VisualStudioVersion = 14.0.25420.1
+# Visual Studio Version 17
+VisualStudioVersion = 17.10.35013.160
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OncologyReceipts", "OncologyReceipts\OncologyReceipts.csproj", "{97657209-6237-4699-9673-683D0359F9CA}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "OncologyCore.Model", "OncologyCore.Model\OncologyCore.Model.csproj", "{2B7C696C-8608-46F5-B2E7-CD59B09EF722}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Oncology.Model", "Oncology.Model\Oncology.Model.csproj", "{14B2BD0A-E1E2-4286-92A8-E97BE9EA8939}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OncologyReceipts.Tests", "OncologyReceipts.Tests\OncologyReceipts.Tests.csproj", "{AA9B9077-79FE-405A-AE66-27C6526AF84D}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "OncologyReceiptsCore", "OncologyReceiptsCore\OncologyReceiptsCore.csproj", "{56855D9B-2C0F-42A5-B6C9-346BC86EC458}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -15,20 +13,19 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{97657209-6237-4699-9673-683D0359F9CA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{97657209-6237-4699-9673-683D0359F9CA}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{97657209-6237-4699-9673-683D0359F9CA}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{97657209-6237-4699-9673-683D0359F9CA}.Release|Any CPU.Build.0 = Release|Any CPU
-		{14B2BD0A-E1E2-4286-92A8-E97BE9EA8939}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{14B2BD0A-E1E2-4286-92A8-E97BE9EA8939}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{14B2BD0A-E1E2-4286-92A8-E97BE9EA8939}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{14B2BD0A-E1E2-4286-92A8-E97BE9EA8939}.Release|Any CPU.Build.0 = Release|Any CPU
-		{AA9B9077-79FE-405A-AE66-27C6526AF84D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{AA9B9077-79FE-405A-AE66-27C6526AF84D}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{AA9B9077-79FE-405A-AE66-27C6526AF84D}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{AA9B9077-79FE-405A-AE66-27C6526AF84D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2B7C696C-8608-46F5-B2E7-CD59B09EF722}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2B7C696C-8608-46F5-B2E7-CD59B09EF722}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2B7C696C-8608-46F5-B2E7-CD59B09EF722}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2B7C696C-8608-46F5-B2E7-CD59B09EF722}.Release|Any CPU.Build.0 = Release|Any CPU
+		{56855D9B-2C0F-42A5-B6C9-346BC86EC458}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{56855D9B-2C0F-42A5-B6C9-346BC86EC458}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{56855D9B-2C0F-42A5-B6C9-346BC86EC458}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{56855D9B-2C0F-42A5-B6C9-346BC86EC458}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {C4E07506-8323-422B-A362-5B02C6448D48}
 	EndGlobalSection
 EndGlobal
