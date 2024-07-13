@@ -15,7 +15,8 @@ namespace OncologyReceipts.Api
         [Route("{id}"), HttpGet]
         public override async Task<Cycle> GetById(int id)
         {
-            Cycle cycle = await context.Cycles.Include(c => c.Treatment).Include(c => c.CycleItems).FirstOrDefaultAsync(p => p.Id == id);
+            Cycle cycle = await context.Cycles.Include(c => c.Treatment).ThenInclude(t => t.TreatmentItems)
+                .Include(c => c.CycleItems).ThenInclude(ci => ci.Medicament).FirstOrDefaultAsync(p => p.Id == id);
 
             return cycle;
         }    
