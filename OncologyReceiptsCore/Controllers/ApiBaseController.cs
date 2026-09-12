@@ -32,7 +32,7 @@ namespace OncologyReceipts.Api
         }
 
         [Route(""), HttpPut]
-        public virtual async Task<T> Put(T entity)
+        public virtual async Task<T> Put([FromBody] T entity)
         {
             try
             {
@@ -49,7 +49,7 @@ namespace OncologyReceipts.Api
         }
 
         [Route(""), HttpPost]
-        public virtual async Task<T> Post(T entity)
+        public virtual async Task<T> Post([FromBody] T entity)
         {
             try
             {

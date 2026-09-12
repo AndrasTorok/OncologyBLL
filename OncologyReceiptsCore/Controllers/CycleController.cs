@@ -30,7 +30,7 @@ namespace OncologyReceipts.Api
         }
 
         [Route("cycleGraph"), HttpPost]        
-        public async Task<Cycle> CycleGraph(Cycle cycle)
+        public async Task<Cycle> CycleGraph([FromBody] Cycle cycle)
         {
             return await SaveGraph<CycleItem>(cycle, "CycleItems");
         }             
